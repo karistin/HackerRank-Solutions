@@ -1,8 +1,22 @@
-# HackerRank-Solutions
+# HackerRank-Solutions JAVA 
 
-HackerRank-Soultions 제작하기
-- JAVA
-- ALGORITHMS
+ > https://github.com/Java-aid/Hackerrank-Solutions of Copy Project
+
+
+hackerrank solutions java GitHub | hackerrank tutorial in java | hackerrank algorithms solution | hackerrank cracking the coding interview solutions
+
+Code for here - kor. :)
+
+
+HackerRank-Soultions 
+* [JAVA](#java)
+* [ALGORITHMS](#algorithms)
+* [CRACKING THE CODING INTERVIEW](#cracking-the-coding-interview)
+* [DATA STRUCTURES](#data-structures)
+
+
+
+Coding environment used- Windows 10 pro, Intellij , JAVA 11
 
 # JAVA
 
