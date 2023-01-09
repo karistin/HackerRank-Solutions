@@ -21,5 +21,12 @@ public class JavaRegex {
     }
 }
 class MyRegex {
-    public String pattern = "([0-9](\\.)){3}([0-9]{1,3})";
+    /*
+    * \d{1,2} : 0 ~ 99
+    * (0|1)\d{2} : 000 ~ 199
+    * 2[0-4]\d : 200 ~ 249
+    * 25[0-5] : 250 ~ 255
+    * */
+    static String ip = "(\\d{1,2}|(0|1)\\d{2}|2[0-4]\\d|25[0-5])";
+    public static String pattern = ip + "\\." + ip + "\\." + ip + "\\." + ip;
 }
