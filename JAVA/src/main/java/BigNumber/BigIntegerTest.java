@@ -1,6 +1,8 @@
 package BigNumber;
 
 import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class BigIntegerTest {
@@ -15,6 +17,7 @@ public class BigIntegerTest {
         System.out.println(data.multiply(data2));
 
         sc.close();
+        Map<String, Integer> hashMap = new HashMap<>();
     }
 
 }
