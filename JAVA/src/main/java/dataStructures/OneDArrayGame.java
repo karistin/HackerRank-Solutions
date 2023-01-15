@@ -14,68 +14,26 @@ public class OneDArrayGame {
     * i-1 i+1 i+leap에 0이 존재하고 갈 수 있다.
     * */
 
-    private static boolean back(int[] game, int i) {
-        try {
-            if (game[i - 1] == 0) {
-                return true;
-            }
-        } catch (Exception e) {
+
+    static boolean recursion(int i, int leap, int[] game) {
+
+        if ((i < 0) || (game[i] == 1)) {
             return false;
         }
-        return false;
+
+        if ((i == game.length - 1) || (i + leap > game.length - 1)) {
+            return true;
+        }
+        game[i] = 1;
+        return recursion(i - 1, leap, game) || recursion(i + 1, leap, game) || recursion(i + leap, leap, game);
+
     }
 
-    private static boolean walk(int[] game, int i) {
-        try {
-            if (game[i + 1] == 0) {
-                return true;
-            }
-        } catch (Exception e) {
-            return false;
-        }
-        return false;
-    }
 
-    private static boolean jump(int[] game, int i, int leap) {
-        try {
-            System.out.println("JUMP : "+ (i + leap));
-            if ((i + leap >= game.length)) {
-                return true;
-            }
-            else if ( (game[i + leap] == 0)) {
-                return true;
-            }
-        } catch (Exception e) {
-            return false;
-        }
-        return false;
-    }
     public static boolean canWin(int leap, int[] game) {
         // Return true if you can win the game; otherwise, return false.
-        int i = 0;
-        boolean flag = true;
-        while (i != (game.length - 1)) {
-            if (i > game.length - 1) {
-                break;
-            }
-            System.out.println(i);
-            /*
-            * walk 나 back이나 jump가 가능하면 한다.
-            * */
-            if (walk(game, i) && flag) {
-                i++;
-            } else if (back(game, i)) {
-                flag = false;
-                i--;
-                if (jump(game, i, leap)) {
-                    System.out.println("Jump Val : "+ (i + leap));
-                    i = i + leap;
-                }
-            } else {
-                return false;
-            }
-        }
-        return true;
+        boolean result = recursion(0, leap, game);
+        return result;
     }
 
     public static void main(String[] args) {
